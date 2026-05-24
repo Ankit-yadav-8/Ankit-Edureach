@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import SearchOverlay from "./components/SearchOverlay.jsx";
 import { ScrollProgress, BackToTop } from "./components/ScrollUtils.jsx";
-import NewFeaturesBanner from "./components/NewFeaturesBanner.jsx";
 
 import Home from "./pages/Home.jsx";
 import JeeMain from "./pages/JeeMain.jsx";
@@ -93,10 +92,8 @@ export default function App() {
       <ScrollProgress />
       <ScrollManager />
       <Navbar onSearch={() => setSearchOpen(true)} />
-      <NewFeaturesBanner />
 
-      {/* Push page content below navbar (68px) + banner (~48px) */}
-      <main style={{ paddingTop: 116 }}>
+      <main style={{ paddingTop: 68 }}>
         <Routes>
           <Route path="/"                 element={<Home onSearch={() => setSearchOpen(true)} />} />
           <Route path="/jee-main"         element={<JeeMain />} />
