@@ -1,0 +1,17 @@
+@'
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      var redirect = path.split('/').slice(0, 2).join('/') + '/?p=' + 
+        encodeURIComponent(path.slice(1) + search + hash);
+      window.location.replace(redirect);
+    </script>
+  </head>
+  <body></body>
+</html>
+'@ | Out-File -FilePath "public\404.html" -Encoding utf8
