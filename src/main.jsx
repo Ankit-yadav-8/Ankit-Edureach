@@ -7,7 +7,7 @@ import "./styles/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Ankit-Edureach">
       <ShortlistProvider>
         <App />
       </ShortlistProvider>
@@ -15,9 +15,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
-// Register PWA service worker (production builds)
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js").catch(() => {});
+    navigator.serviceWorker.register("/Ankit-Edureach/sw.js").catch(() => {});
   });
 }
