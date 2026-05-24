@@ -8,40 +8,38 @@
 
 :root {
   /* ── Core palette ── */
-  --sky:        #eef6ff;
-  --sky-2:      #e3eeff;
-  --warm-white: #faf9f7;
-  --navy:       #0d1b3e;
-  --navy-light: #1a2f5e;
-  --navy-mid:   #132347;
+  --sky:        #fff8f5;
+  --sky-2:      #fff0ea;
+  --warm-white: #fffcfa;
+  --navy:       #1a1a2e;
+  --navy-light: #2d2d44;
+  --navy-mid:   #16213e;
   --coral:      #e63946;
-  --coral-light:#ff6b75;
+  --coral-light:#ff6b6b;
   --gold:       #f4a261;
   --orange:     #f47b20;
   --teal:       #2ec4b6;
-  --violet:     #6c5ce7;
-  --green:      #2a9d8f;
+  --violet:     #7c3aed;
+  --green:      #059669;
   --gray:       #6b7280;
   --gray-2:     #9aa3b2;
-  --gray-light: #f0f4ff;
-  --border:     #d6e0f5;
-  --ink:        #16203b;
-
-  /* ── Aliases used in JSX inline styles ── */
-  --muted: #6b7280;          /* same as --gray  */
-  --line:  #d6e0f5;          /* same as --border */
+  --gray-light: #fdf4f0;
+  --border:     #f0d9d0;
+  --ink:        #1a1a2e;
+  --muted:      #6b7280;
+  --line:       #f0d9d0;
 
   /* ── Subject accents ── */
-  --phys: #4361ee;
+  --phys: #e63946;
   --chem: #2ec4b6;
   --math: #f4a261;
 
   /* ── Shadows ── */
-  --shadow-sm:   0 4px 24px  rgba(13,27,62,.07);
-  --shadow-md:   0 10px 34px rgba(13,27,62,.13);
-  --shadow-lg:   0 22px 60px rgba(13,27,62,.20);
-  --shadow-coral:0 10px 28px rgba(230,57,70,.32);
-  --shadow-card: 0 2px 12px  rgba(13,27,62,.08), 0 1px 3px rgba(13,27,62,.05);
+  --shadow-sm:    0 4px 24px  rgba(26,26,46,.06);
+  --shadow-md:    0 10px 34px rgba(26,26,46,.12);
+  --shadow-lg:    0 22px 60px rgba(26,26,46,.18);
+  --shadow-coral: 0 10px 28px rgba(230,57,70,.30);
+  --shadow-card:  0 2px 12px  rgba(26,26,46,.07), 0 1px 3px rgba(26,26,46,.04);
 
   /* ── Shape / motion ── */
   --radius:      14px;
@@ -83,11 +81,11 @@ input,select,textarea { font-family:inherit; }
   padding:5rem 0;
   position:relative;
 }
-.section--sky  { background:linear-gradient(180deg,var(--sky) 0%,var(--warm-white) 100%); }
-.section--tint { background:linear-gradient(180deg,var(--warm-white) 0%,var(--sky) 100%); }
+.section--sky  { background: linear-gradient(180deg, #fff8f5 0%, #fffcfa 100%); }
+.section--tint { background: linear-gradient(180deg, #fffcfa 0%, #fff8f5 100%); }
 
 /* page wrapper — clears fixed navbar */
-.page { padding-top:128px; min-height:70vh; }
+.page { padding-top: 68px; min-height: 70vh; }
 
 /* ═══════════════════════════════════════════════
    SECTION HEADINGS
@@ -268,22 +266,22 @@ table.data-table {
   min-width:640px;
 }
 table.data-table thead th {
-  background:var(--navy);
-  color:#fff;
-  text-align:left;
-  padding:0.9rem 1rem;
-  font-size:0.82rem;
-  font-weight:600;
-  position:sticky;
-  top:0;
+  background: linear-gradient(135deg, #1a1a2e, #2d2d44);
+  color: #fff;
+  text-align: left;
+  padding: 0.9rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
 }
 table.data-table tbody td {
   padding:0.85rem 1rem;
   font-size:0.9rem;
   border-bottom:1px solid var(--gray-light);
 }
-table.data-table tbody tr:nth-child(even) { background:var(--sky); }
-table.data-table tbody tr:hover           { background:var(--sky-2); }
+table.data-table tbody tr:nth-child(even) { background: #fff8f5; }
+table.data-table tbody tr:hover           { background: #fff0ea; }
 
 /* ═══════════════════════════════════════════════
    TABS
@@ -344,7 +342,7 @@ table.data-table tbody tr:hover           { background:var(--sky-2); }
 }
 
 /* ═══════════════════════════════════════════════
-   COLLEGE CARDS  (matches Image 1 screenshot)
+   COLLEGE CARDS
 ═══════════════════════════════════════════════ */
 .college-card {
   background:#fff;
@@ -490,7 +488,7 @@ table.data-table tbody tr:hover           { background:var(--sky-2); }
 @media (max-width:500px)  { .college-grid { grid-template-columns:1fr; } }
 
 /* ═══════════════════════════════════════════════
-   JEE RANK PREDICTOR  (matches Image 3 screenshot)
+   JEE RANK PREDICTOR
 ═══════════════════════════════════════════════ */
 .predictor-page {
   background:var(--sky);
@@ -619,7 +617,7 @@ table.data-table tbody tr:hover           { background:var(--sky-2); }
 .btn-predict:hover { transform:translateY(-2px) scale(1.03); box-shadow:0 16px 36px rgba(230,57,70,.42); }
 
 /* ═══════════════════════════════════════════════
-   FOOTER  (matches Image 2 screenshot — dark navy)
+   FOOTER
 ═══════════════════════════════════════════════ */
 .site-footer {
   background:var(--navy);
@@ -882,7 +880,6 @@ table.data-table tbody tr:hover           { background:var(--sky-2); }
 /* ============================================================
    UI polish layer (colors, depth, hover feedback)
    ============================================================ */
-body { background: linear-gradient(180deg, #ffffff 0%, var(--warm-white) 40%, #eef4ff 100%); background-attachment: fixed; }
 .card { border: 1px solid rgba(197,213,240,0.55); transition: var(--transition); }
 .card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: rgba(230,57,70,0.25); }
 .btn-coral { box-shadow: 0 6px 18px rgba(230,57,70,0.28); }
@@ -978,10 +975,10 @@ textarea.input { width: 100%; }
 ───────────────────────────────────────────────────────────── */
 body {
   background:
-    radial-gradient(ellipse 80% 50% at 10%  10%,  rgba(230,57,70,.035)  0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 90%  20%,  rgba(46,196,182,.030) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 60% at 50%  90%,  rgba(108,92,231,.025) 0%, transparent 60%),
-    linear-gradient(180deg, #ffffff 0%, var(--warm-white) 40%, #eef4ff 100%);
+    radial-gradient(ellipse 80% 50% at 10%  10%,  rgba(230,57,70,.04)  0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90%  20%,  rgba(244,162,97,.03) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 60% at 50%  90%,  rgba(46,196,182,.02) 0%, transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #fffcfa 40%, #fff8f5 100%);
   background-attachment: fixed;
 }
 
