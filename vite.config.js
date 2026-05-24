@@ -2,22 +2,14 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 
-export default defineConfig({
-  base: "/Ankit-Edu/",
+export default defineConfig(({ command }) => ({
+ base: command === "build" ? "/Ankit-Edureach/" : "/",
   plugins: [react()],
   server: {
     port: 5173,
     open: true,
-    watch: {
-      usePolling: true,
-      interval: 300,
-    },
-    hmr: {
-      protocol: "ws",
-      host: "localhost",
-      port: 5174,
-      clientPort: 5174,
-    },
+    watch: { usePolling: true, interval: 300 },
+    hmr: { protocol: "ws", host: "localhost", port: 5174, clientPort: 5174 },
   },
   resolve: {
     dedupe: ["react", "react-dom"],
@@ -26,7 +18,5 @@ export default defineConfig({
       "react-dom": path.resolve("./node_modules/react-dom"),
     },
   },
-  optimizeDeps: {
-    include: ["react", "react-dom"],
-  },
-});
+  optimizeDeps: { include: ["react", "react-dom"] },
+}));

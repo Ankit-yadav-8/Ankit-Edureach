@@ -1,6 +1,5 @@
 import Hero from "../components/home/Hero.jsx";
 import PredictorCards from "../components/home/PredictorCards.jsx";
-import NewTools from "../components/home/NewTools.jsx";
 import ApplicationRadar from "../components/home/ApplicationRadar.jsx";
 import EntranceExams from "../components/home/EntranceExams.jsx";
 import TopColleges from "../components/home/TopColleges.jsx";
@@ -13,7 +12,6 @@ export default function Home({ onSearch }) {
     <>
       <Hero onSearch={onSearch} />
       <PredictorCards />
-      <NewTools />
       <ApplicationRadar />
       <EntranceExams />
       <TopColleges />

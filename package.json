@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://ankit-yadav-8.github.io/Ankit-Edu",
+"homepage": "https://ankit-yadav-8.github.io/Ankit-Edureach",
   "description": "EduReach — JEE & College Discovery Portal (React + Vite)",
   "scripts": {
     "dev": "vite",
