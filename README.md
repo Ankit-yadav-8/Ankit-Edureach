@@ -130,3 +130,5 @@ Add new entries to the `COLLEGES` array in `src/data/colleges.js` (same shape: s
 ---
 
 Built with care. Everything is modular — open any file in `src/`, edit, and the dev server reloads instantly.
+#   A n k i t - E d u r e a c h  
+ 
