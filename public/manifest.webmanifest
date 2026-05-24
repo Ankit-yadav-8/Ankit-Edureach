@@ -2,13 +2,13 @@
   "name": "EduReach — JEE & College Discovery",
   "short_name": "EduReach",
   "description": "Predict your JEE rank, discover colleges and track counselling — all in one place.",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/Ankit-Edu/",
+  "scope": "/Ankit-Edu/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#FAFAFA",
   "theme_color": "#0D1B3E",
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    { "src": "/Ankit-Edu/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
   ]
 }
