@@ -3,11 +3,13 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://ankit-yadav-8.github.io/Ankit-Edu",
   "description": "EduReach — JEE & College Discovery Portal (React + Vite)",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^11.3.19",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
+    "gh-pages": "^6.3.0",
     "vite": "^7.3.3"
   }
 }
