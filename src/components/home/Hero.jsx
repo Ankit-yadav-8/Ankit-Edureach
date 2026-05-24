@@ -11,10 +11,10 @@ function Stat({ target, suffix, label }) {
   const [ref, val] = useCountUp(target);
   return (
     <div ref={ref} style={{ textAlign: "center" }}>
-      <div style={{ fontFamily: "Sora", fontWeight: 800, fontSize: "clamp(1.6rem,4vw,2.4rem)", color: "#fff" }}>
+      <div style={{ fontFamily: "Sora", fontWeight: 800, fontSize: "clamp(1.5rem,3.5vw,2.2rem)", color: "#fff" }}>
         {val.toLocaleString("en-IN")}{suffix}
       </div>
-      <div style={{ fontSize: 13, color: "rgba(255,255,255,.7)", marginTop: 2 }}>{label}</div>
+      <div style={{ fontSize: 12.5, color: "rgba(255,255,255,.65)", marginTop: 2 }}>{label}</div>
     </div>
   );
 }
@@ -28,55 +28,83 @@ export default function Hero({ onSearch }) {
   };
 
   return (
-    <section style={{ position: "relative", overflow: "hidden", background: "linear-gradient(135deg,#0D1B3E 0%,#1a2a5e 55%,#0b3a4a 100%)", paddingTop: 178, paddingBottom: 70 }}>
+    <section style={{
+      position: "relative", overflow: "hidden",
+      background: "linear-gradient(135deg,#0D1B3E 0%,#162550 50%,#0b3340 100%)",
+      paddingTop: 110, paddingBottom: 56,
+    }}>
       <ParticleBackground density={80} />
       <div className="container" style={{ position: "relative", zIndex: 2, textAlign: "center" }}>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="pill" style={{ background: "rgba(255,255,255,.12)", color: "#fff", border: "1px solid rgba(255,255,255,.25)" }}>
-            <Sparkles size={14} /> India's smartest JEE & college discovery portal
+          <span className="pill" style={{
+            background: "rgba(255,255,255,.1)", color: "rgba(255,255,255,.92)",
+            border: "1px solid rgba(255,255,255,.2)", fontSize: 13,
+          }}>
+            <Sparkles size={13} /> India's smartest JEE & college discovery portal
           </span>
-          <h1 style={{ fontFamily: "Sora", fontWeight: 800, color: "#fff", fontSize: "clamp(2.1rem,6vw,4rem)", lineHeight: 1.05, margin: "1.2rem 0 0.6rem" }}>
+          <h1 style={{
+            fontFamily: "Sora", fontWeight: 800, color: "#fff",
+            fontSize: "clamp(2rem,5.5vw,3.6rem)", lineHeight: 1.08,
+            margin: "1rem 0 0.5rem",
+          }}>
             Know Your Rank.<br />
-            <span style={{ background: "linear-gradient(90deg,#E63946,#F4A261)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            <span style={{ background: "linear-gradient(90deg,#FF6B6B,#FFB347)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
               Find Your College.
             </span>
           </h1>
-          <p style={{ color: "rgba(255,255,255,.8)", fontSize: "clamp(1rem,2vw,1.18rem)", maxWidth: 640, margin: "0 auto 1.8rem" }}>
-            Predict your JEE rank from marks, discover every college you can get into across all JoSAA & CSAB rounds, and track every counselling deadline — all in one place.
+          <p style={{
+            color: "rgba(255,255,255,.75)", fontSize: "clamp(0.95rem,1.8vw,1.1rem)",
+            maxWidth: 580, margin: "0 auto 1.5rem", lineHeight: 1.65,
+          }}>
+            Predict your JEE rank from marks, discover every college across all JoSAA & CSAB rounds, and track every counselling deadline — all in one place.
           </p>
         </motion.div>
 
         {/* Search */}
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}
-          style={{ maxWidth: 620, margin: "0 auto", display: "flex", gap: 10, background: "#fff", padding: 8, borderRadius: 16, boxShadow: "0 20px 50px rgba(0,0,0,.3)" }}>
+          style={{
+            maxWidth: 600, margin: "0 auto", display: "flex", gap: 8,
+            background: "#fff", padding: 7, borderRadius: 14,
+            boxShadow: "0 16px 48px rgba(0,0,0,.25)",
+          }}>
           <div style={{ display: "flex", alignItems: "center", flex: 1, gap: 10, paddingLeft: 12 }}>
-            <Search size={20} color="var(--muted)" />
+            <Search size={18} color="#94a3b8" />
             <input
-              value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()}
+              value={q} onChange={(e) => setQ(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && go()}
               placeholder="Search colleges, exams, predictors…"
               onFocus={onSearch}
-              style={{ border: "none", outline: "none", flex: 1, fontSize: 16, fontFamily: "DM Sans", background: "transparent" }}
+              style={{ border: "none", outline: "none", flex: 1, fontSize: 15, fontFamily: "DM Sans", background: "transparent" }}
             />
           </div>
-          <button className="btn btn-coral" onClick={() => go()}>Search</button>
+          <button className="btn btn-coral" onClick={() => go()} style={{ borderRadius: 10 }}>Search</button>
         </motion.div>
 
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginTop: 14 }}>
+        <div style={{ display: "flex", gap: 7, flexWrap: "wrap", justifyContent: "center", marginTop: 12 }}>
           {QUICK.map((t) => (
             <button key={t} onClick={() => go(t)} className="pill"
-              style={{ background: "rgba(255,255,255,.1)", color: "rgba(255,255,255,.9)", border: "1px solid rgba(255,255,255,.2)", cursor: "pointer" }}>
+              style={{ background: "rgba(255,255,255,.08)", color: "rgba(255,255,255,.85)", border: "1px solid rgba(255,255,255,.18)", cursor: "pointer", fontSize: 12.5 }}>
               {t}
             </button>
           ))}
         </div>
 
-        <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 26, flexWrap: "wrap" }}>
-          <button className="btn btn-coral" onClick={() => nav("/jee-main#college")}><Crosshair size={18} /> Predict My College</button>
-          <button className="btn btn-light" onClick={() => nav("/jee-main#rank")}><TrendingUp size={18} /> Predict My Rank</button>
+        <div style={{ display: "flex", gap: 10, justifyContent: "center", marginTop: 22, flexWrap: "wrap" }}>
+          <button className="btn btn-coral" onClick={() => nav("/jee-main#college")} style={{ fontSize: 14 }}>
+            <Crosshair size={16} /> Predict My College
+          </button>
+          <button className="btn btn-light" onClick={() => nav("/jee-main#rank")} style={{ fontSize: 14 }}>
+            <TrendingUp size={16} /> Predict My Rank
+          </button>
         </div>
 
         {/* Stats */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16, maxWidth: 760, margin: "44px auto 0", padding: "22px 0", borderTop: "1px solid rgba(255,255,255,.15)", borderBottom: "1px solid rgba(255,255,255,.15)" }}>
+        <div style={{
+          display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16,
+          maxWidth: 720, margin: "36px auto 0", padding: "20px 0",
+          borderTop: "1px solid rgba(255,255,255,.12)",
+          borderBottom: "1px solid rgba(255,255,255,.12)",
+        }}>
           <Stat target={2500} suffix="+" label="Colleges & branches" />
           <Stat target={17} suffix="" label="Entrance exams" />
           <Stat target={8} suffix="" label="Counselling rounds" />
